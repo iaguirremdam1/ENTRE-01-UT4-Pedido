@@ -1,9 +1,9 @@
 #BlueJ package file
-dependency1.from=LineaPedido
-dependency1.to=Producto
+dependency1.from=TestPedido
+dependency1.to=Pedido
 dependency1.type=UsesDependency
-dependency2.from=TestPedido
-dependency2.to=Pedido
+dependency2.from=LineaPedido
+dependency2.to=Producto
 dependency2.type=UsesDependency
 dependency3.from=Pedido
 dependency3.to=Fecha
@@ -19,8 +19,8 @@ editor.fx.0.width=697
 editor.fx.0.x=676
 editor.fx.0.y=0
 objectbench.height=125
-objectbench.width=338
-package.divider.horizontal=0.5219364599092284
+objectbench.width=337
+package.divider.horizontal=0.5204236006051437
 package.divider.vertical=0.8044444444444444
 package.editor.height=523
 package.editor.width=541

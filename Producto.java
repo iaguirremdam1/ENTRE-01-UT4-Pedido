@@ -33,10 +33,11 @@ public class Producto
     /**
      * obtiene un nuevo producto copia idéntica del actual
      */
-    public void obtenerCopia() {
-        Producto producto = new Producto(getNombre(),
+    public Producto obtenerCopia() {
+        Producto producto = new Producto(getNombre(), 
         getPrecio());
         System.out.println(this.toString());
+        return producto;
     }
 
     /**
@@ -44,8 +45,10 @@ public class Producto
      * (ver enunciado)
      */
     public String toString() {
-        String toStr = String.format("%30s", getNombre(), "|",
-        "%-8.2d", getPrecio(), "unidad");
+        String toStr = "";
+        toStr += String.format("%30s", getNombre());
+        toStr += String.format(" | ");
+        toStr += String.format("%8s", getPrecio() + " unidad");
         return toStr;
     }
 

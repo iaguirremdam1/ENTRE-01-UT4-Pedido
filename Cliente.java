@@ -51,14 +51,16 @@ public class Cliente
      * representación textual del cliente
      */
     public String toString() {
-        String toStr =  String.format("%-10s", "NOMBRE: ", 
-                "%10s", getNombre(), "%-10s \n", 
-                "DIRECCION: ", "%10s", getDireccion(),
-                "%-10s \n", "CIUDAD: ", "%10s",
-                getCiudad(),
-                "%-10s \n", "PROVINCIA: ", "%10s",
-                getProvincia());
-        return toStr;
+        String toStr = "";
+          toStr += String.format("%10s","NOMBRE:");
+          toStr += String.format("%-10s"," " + nombre);
+          toStr += String.format("\n%10s","DIRECCIÓN:");
+          toStr += String.format("%-10s"," " + direccion);
+          toStr += String.format("\n%10s","CIUDAD:");
+          toStr += String.format("%-10s"," " + ciudad);
+          toStr += String.format("\n%10s","PROVINCIA:");
+          toStr += String.format("%-10s"," " + provincia);
+          return toStr;
     }
 
     /**

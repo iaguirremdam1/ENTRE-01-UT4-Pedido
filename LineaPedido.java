@@ -9,21 +9,20 @@ public class LineaPedido
 {
     private Producto producto;
     private int cantidad;
-     
 
     /**
      * Constructor  
      */
-    public LineaPedido()    {
-         this.producto = producto;
-         this.cantidad = cantidad;
+    public LineaPedido(Producto producto, int cantidad)    {
+        this.producto = producto;
+        this.cantidad = cantidad;
     }
 
-     /**
+    /**
      * accesor para el producto
      */
     public Producto getProducto() {
-         return producto;
+        return producto;
     }
 
     /**
@@ -32,23 +31,24 @@ public class LineaPedido
     public int getCantidad() {
         return cantidad;
     }
-    
+
     /**
      * obtiene una nueva línea de pedido copia idéntica de la actual
      */
-    public void obtenerCopia() {
-         LineaPedido pedido = new LineaPedido(getProducto(),
-         getCantidad());
-         
+    public Producto obtenerCopia() {
+        return producto.obtenerCopia();
     }
-    
-     /**
+
+    /**
      * Representación textual de la línea de pedido
      * (ver enunciado)
      */
     public String toString() {
-        String toStr = String.format("%30s", getProducto(), "|",
-        "%4d%", getCantidad(), "unidad/es");
+        String toStr = "";
+        toStr += producto.toString();
+        toStr += String.format(" | ");
+        toStr += String.format("%4s", getCantidad() +
+            " unidad/es");
         return toStr;
     }
 }
