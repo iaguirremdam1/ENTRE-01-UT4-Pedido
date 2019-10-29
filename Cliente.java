@@ -1,5 +1,4 @@
 
-
 /**
  *  Representa a un cliente que hace un pedido 
  */
@@ -52,10 +51,16 @@ public class Cliente
      * representación textual del cliente
      */
     public String toString() {
-         
-          
+        String toStr =  String.format("%-10s", "NOMBRE: ", 
+                "%10s", getNombre(), "%-10s \n", 
+                "DIRECCION: ", "%10s", getDireccion(),
+                "%-10s \n", "CIUDAD: ", "%10s",
+                getCiudad(),
+                "%-10s \n", "PROVINCIA: ", "%10s",
+                getProvincia());
+        return toStr;
     }
-    
+
     /**
      * 
      */

@@ -1,3 +1,4 @@
+
 /**
  *  
  * Modela un producto. Todo producto tiene un nombre y un  precio unidad 
@@ -28,12 +29,14 @@ public class Producto
     public double getPrecio() {
         return precio;
     }
-    
+
     /**
      * obtiene un nuevo producto copia idéntica del actual
      */
-    public         obtenerCopia() {
-         
+    public void obtenerCopia() {
+        Producto producto = new Producto(getNombre(),
+        getPrecio());
+        System.out.println(this.toString());
     }
 
     /**
@@ -41,7 +44,9 @@ public class Producto
      * (ver enunciado)
      */
     public String toString() {
-        
+        String toStr = String.format("%30s", getNombre(), "|",
+        "%-8.2d", getPrecio(), "unidad");
+        return toStr;
     }
 
 }
