@@ -40,22 +40,22 @@ public class Pedido
     /**
      * calcular y devolver el importe total del pedido sin Iva
      */
-    public String getImporteAntesIva() {
-        return
+    public double getImporteAntesIva() {
+        return Producto.getPrecio();
     }
 
     /**
      * calcular y devolver el iva a aplicar
      */
     public double getIva() {
-        return producto * IVA;
+        return getImporteAntesIva() * IVA;
     }
 
     /**
      * calcular y devolver el importe total del pedido con Iva
      */
-    public   getImporteTotal() {
-
+    public double getImporteTotal() {
+        return getImporteAntesIva() + getIva();
     }
 
     /**
@@ -63,7 +63,24 @@ public class Pedido
      * (ver enunciado)
      */
     public String toString() {
-
+        String toStr = "";
+        toStr += String.format("FECHA PEDIDO: ", getFecha()); 
+        toStr += String.format("DATOS DEL CLIENTE");
+        toStr += cliente.toString();
+        
+        toStr += String.format("**** Artículos en el pedido ****");
+        
+        toStr += LineaPedido.toString();
+        
+        toStr += String.format("**** A pagar ****");
+        
+        toStr += String.format("%20s", "IMPORTE SIN IVA: ",
+                 "%8s", getImporteAntesIva());
+        toStr += String.format("%20s", "IVA: ",
+                 "%8s", getIva());
+        toStr += String.format("%20s", "IMPORTE TOTAL: ",
+                 "%8s", getImporteTotal());
+        return toStr;
     }
 
     /**
@@ -71,14 +88,14 @@ public class Pedido
      * como parámetro
      */
     public boolean masAntiguoQue(Pedido otro) {
-
+        return fecha.antesQue(otro.getFecha());
     }
 
-    /**
-     * devuelve una referencia al pedido actual
-     */
-    public    getPedidoActual() {
-
-    }
+    // /**
+     // * devuelve una referencia al pedido actual
+     // */
+    // public  getPedidoActual() {
+        
+    // }
 
 }
